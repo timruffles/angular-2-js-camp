@@ -11,6 +11,8 @@ import { Component, Input } from "@angular/core";
   styles: [`
     img {
       position: absolute;
+      transform: translate3d(0,0,0);
+      top: 25px;
     }
   `],
 })
