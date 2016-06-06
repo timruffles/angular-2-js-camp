@@ -8,7 +8,8 @@ import { Component, Input } from "@angular/core";
   `,
 })
 export class GameScreen {
-  @Input() winning: boolean;
+
+  // TODO get winning into component
 
   background() {
     return `img/${this.winning ? "winning" : "lost" }.jpg`;
