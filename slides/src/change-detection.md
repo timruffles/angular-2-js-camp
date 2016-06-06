@@ -21,9 +21,46 @@ EXCEPTION: Expression '{{ bear }} in App@3:94'
 
 ![x](img/data-down.png)
 
+
+## `@Input()`
+
+```typescript
+import { Input } from "@angular/core";
+
+@Component({ })
+class Bear {
+  @Input("bearState") state: bearState[];
+}
+```
+
+```html
+<bear [bearState]='store.bear'>
+</bear>
+```
+
 ## Events up
 
 ![x](img/events-up.png)
+
+## `@Output()`
+
+```typescript
+import { Output, EventEmitter } from "@angular/core";
+
+@Component({ })
+class BearControls {
+  @Output("command") command = new EventEmitter;
+
+  keypress() {
+    this.command.emit(Command.move());
+  }
+}
+```
+
+```html
+<bear (command)='handleCommand($event)'>
+</bear>
+```
 
 ## No looping
 

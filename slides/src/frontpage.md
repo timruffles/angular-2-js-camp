@@ -38,5 +38,6 @@ or, a tale of foolish friends
 
 > Than could, indeed, the wisest foe.
 
+## So... what about Angular 2?
 
 

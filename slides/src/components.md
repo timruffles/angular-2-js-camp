@@ -90,3 +90,5 @@ bootstrap(HelloComponent);
 ## App = tree of components
 
 ![component](img/component-tree.png)
+
+## Let's try it out!

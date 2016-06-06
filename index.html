@@ -81,6 +81,9 @@
 </blockquote>
 </section>
 
+<section  class=""><h2 id="so-what-about-angular-2-">So... what about Angular 2?</h2>
+</section>
+
 <section data-state='title' class=" title"><h2 id="angular-2">Angular 2</h2>
 </section>
 
@@ -188,6 +191,9 @@ bootstrap(HelloComponent);
 
 <section  class=""><h2 id="app-tree-of-components">App = tree of components</h2>
 <p><img src="img/component-tree.png" alt="component"></p>
+</section>
+
+<section  class=""><h2 id="let-s-try-it-out-">Let&#39;s try it out!</h2>
 </section>
 
 <section data-state='title' class=" title"><h2 id="typescript">TypeScript</h2>
@@ -545,8 +551,38 @@ class HelloComponent {
 <p><img src="img/data-down.png" alt="x"></p>
 </section>
 
+<section  class=""><h2 id="-input-"><code>@Input()</code></h2>
+<pre><code class="lang-typescript">import { Input } from &quot;@angular/core&quot;;
+
+@Component({ })
+class Bear {
+  @Input(&quot;bearState&quot;) state: bearState[];
+}
+</code></pre>
+<pre><code class="lang-html">&lt;bear [bearState]=&#39;store.bear&#39;&gt;
+&lt;/bear&gt;
+</code></pre>
+</section>
+
 <section  class=""><h2 id="events-up">Events up</h2>
 <p><img src="img/events-up.png" alt="x"></p>
+</section>
+
+<section  class=""><h2 id="-output-"><code>@Output()</code></h2>
+<pre><code class="lang-typescript">import { Output, EventEmitter } from &quot;@angular/core&quot;;
+
+@Component({ })
+class BearControls {
+  @Output(&quot;command&quot;) command = new EventEmitter;
+
+  keypress() {
+    this.command.emit(Command.move());
+  }
+}
+</code></pre>
+<pre><code class="lang-html">&lt;bear (command)=&#39;handleCommand($event)&#39;&gt;
+&lt;/bear&gt;
+</code></pre>
 </section>
 
 <section  class=""><h2 id="no-looping">No looping</h2>
