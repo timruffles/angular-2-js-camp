@@ -1,4 +1,4 @@
-import { Component, Input, ChangeDetectionStrategy } from "@angular/core";
+import { Component, Input, ChangeDetectionStrategy, ChangeDetectorRef } from "@angular/core";
 import { BearState } from "./BearStore";
 import { Observable } from "rxjs/observable";
 import { DomSanitizationService } from "@angular/platform-browser";
@@ -8,7 +8,8 @@ import { DomSanitizationService } from "@angular/platform-browser";
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <img src='img/tiny-bear.png'
-         [style.transform]="transform()" 
+         [style.transform]="transform()"
+         [style.opacity]='opacity'
          >
   `,
   styles: [`
@@ -20,12 +21,25 @@ import { DomSanitizationService } from "@angular/platform-browser";
 })
 export class TinyBear {
   @Input() bear: BearState;
-  constructor(private sanitizer: DomSanitizationService) {
+  checks = 0;
+  opacity = 0.2;
+
+  constructor(private sanitizer: DomSanitizationService,
+    private cd: ChangeDetectorRef) {
   }
 
   transform() {
     return this.sanitizer.bypassSecurityTrustStyle(
         `translate3d(${this.bear.x}px, ${this.bear.y}px, 0)`);
+  }
+
+  ngOnChanges() {
+    this.opacity = 1;
+
+     window.requestAnimationFrame(() => {
+      this.opacity = 0.2;
+      this.cd.markForCheck();
+    });
   }
 
 }

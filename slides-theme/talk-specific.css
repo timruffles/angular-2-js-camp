@@ -1,0 +1,77 @@
+.bad body {
+  background: crimson;
+}
+
+.bad body h2 {
+  color: #fff;
+}
+
+body {
+  /* transform is ported from reveal
+     need !important to override reveal's styling */
+  transition: transform 0.8s ease, background 0.5s !important;
+}
+
+.notitle > h2 {
+  display: none;
+}
+
+.big-list li {
+  font-size: 1.25em;
+  line-height: 2em;
+}
+
+.reveal a.tweet {
+  position: absolute;
+  top: 3rem;
+  right: 2rem;
+  font-weight: 200;
+  text-align: right;
+  text-decoration: none;
+  transition: all 0.5s;
+}
+
+.reveal .front h2
+, .reveal .front p {
+  text-align: center;
+}
+
+.reveal .front h2 {
+  margin-bottom: 4rem;
+}
+
+.reveal .front a {
+  font-size: 4rem;
+  color: hsl(202, 79%, 46%);
+}
+
+
+clock-input {
+  display: block;
+}
+
+.axis  .domain {
+  fill: none;
+  stroke: #000;
+}
+.axis  text {
+  font-size: 1.5rem;
+}
+
+.two-up img:first-child {
+  position: absolute;
+  left: -5em;
+}
+
+.two-up img:last-child {
+  position: absolute;
+  left: 10em;
+}
+
+.reveal pre code {
+  font-size: 1.8rem;
+}
+
+.reveal .bigCode pre code {
+  font-size: 2.4rem;
+}

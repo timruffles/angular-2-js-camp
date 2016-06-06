@@ -16,7 +16,7 @@ export class BearStore {
     const bears = [];
     const movers = [];
 
-    let n = 600;
+    let n = 1000;
     while(n--) {
       const observable = new Observable((observer) => {
         let state = BearState.random();

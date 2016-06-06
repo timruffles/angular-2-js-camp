@@ -1,0 +1,4 @@
+live-code/app/*.js
+live-code/app/*.js.map
+live-code/app/typings
+live-code/app/node_modules

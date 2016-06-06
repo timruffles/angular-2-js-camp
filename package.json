@@ -1,0 +1,29 @@
+{
+  "name": "skeleton",
+  "version": "1.0.0",
+  "description": "",
+  "dependencies": {
+    "MD5": "^1.2.1",
+    "argh": "^0.1.3",
+    "chai": "^1.9.1",
+    "debug": "^1.0.4",
+    "doctestjs": "^0.3.0",
+    "easy-stdin": "^1.0.1",
+    "esprima": "^1.2.2",
+    "heredoc": "^1.2.0",
+    "lodash": "^2.4.1",
+    "marked": "^0.3.5",
+    "node-uuid": "^1.4.1",
+    "nodemon": "^1.9.2",
+    "pprint": "^0.0.1",
+    "shelljs": "^0.3.0"
+  },
+  "devDependencies": {
+    "mocha": "^1.21.3"
+  },
+  "scripts": {
+    "slides": "slides/tools/build-template.sh slides/src < slides/index.template.md > index.html",
+    "slides:dev": "nodemon --ext md,js,css --watch slides --exec 'npm run slides'"
+  },
+  "license": "©"
+}
