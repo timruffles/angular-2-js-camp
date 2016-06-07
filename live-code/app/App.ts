@@ -16,7 +16,7 @@ import { Bear } from "./Bear";
 
   keydown(event: KeyboardEvent) {
     if(event.key === "d") {
-      this.game.defend();
+      this.store.defend();
     }
   }
 
