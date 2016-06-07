@@ -15,6 +15,27 @@
 
 ## Static types done right
 
+## Other engineers have to
+
+##    
+{notitle: 1}
+
+![easy](img/maths.png)
+
+
+## Are types a burden?
+
+```typescript
+// why not catch this early?
+boot({
+  elment: document.querySelector("app"),
+})
+
+function boot({ element } : { element: Element }) {
+  // ...
+}
+```
+
 ## Main benefit
 
 ## Fewer WTFs!
@@ -68,6 +89,32 @@ console.log(greet("hi"));
 console.log(greet(1));
 ```
 
+
+## String union types
+
+```typescript
+type gameEvent = "start" | "end";
+
+// Type error! 'type "other" is not
+//   assignable to type "start" | "e...
+const event: gameEvent = "other";
+```
+
+## Type unions...
+
+```typescript
+type startEvent = {
+  at: number,
+};
+
+type endEvent = {
+  at: number,
+  reason: string,
+};
+
+type gameEvent = startEvent | endEvent;
+```
+
 ## Modules
 {title:1}
 
@@ -97,7 +144,7 @@ bootstrap(HelloComponent);
 ## ES6++
 
 
-## Properties in constructor
+## Properties + privacy
 
 ```typescript
 export class BearState {
@@ -125,31 +172,6 @@ export class BearState {
 
 const state = new BearState(10, 20);
 state.y // 20;
-```
-
-## String union types
-
-```typescript
-type gameEvent = "start" | "end";
-
-// Type error! 'type "other" is not
-//   assignable to type "start" | "e...
-const event: gameEvent = "other";
-```
-
-## Type unions...
-
-```typescript
-type startEvent = {
-  at: number,
-};
-
-type endEvent = {
-  at: number,
-  reason: string,
-};
-
-type gameEvent = startEvent | endEvent;
 ```
 
 

@@ -92,3 +92,8 @@ bootstrap(HelloComponent);
 ![component](img/component-tree.png)
 
 ## Let's try it out!
+
+- Goal: render a bear!
+
+
+

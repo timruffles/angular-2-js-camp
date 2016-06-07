@@ -103,3 +103,9 @@ class HelloComponent {
 
 ![injector tree](img/injector-tree.png)
 
+## Let's try
+
+- Goal:
+- Inject a game store
+- Update game state from store
+

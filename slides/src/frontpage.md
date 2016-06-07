@@ -21,13 +21,7 @@ or, a tale of foolish friends
 
 ![bear](img/squash.png)
 
-## Angular 1
 
-![ng1](img/ng1.png)
-
-## Life-cycle of tech
-
-![ng1](img/progress.png)
 
 ## The lesson
 
@@ -37,6 +31,18 @@ or, a tale of foolish friends
 > A foolish friend may cause more woe
 
 > Than could, indeed, the wisest foe.
+
+
+- woe = :(
+- foe = enemy
+
+## Angular 1
+
+![ng1](img/ng1.png)
+
+## Life-cycle of tech
+
+![ng1](img/progress.png)
 
 ## So... what about Angular 2?
 

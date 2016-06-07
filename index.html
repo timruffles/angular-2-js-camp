@@ -63,14 +63,6 @@
 <p><img src="img/squash.png" alt="bear"></p>
 </section>
 
-<section  class=""><h2 id="angular-1">Angular 1</h2>
-<p><img src="img/ng1.png" alt="ng1"></p>
-</section>
-
-<section  class=""><h2 id="life-cycle-of-tech">Life-cycle of tech</h2>
-<p><img src="img/progress.png" alt="ng1"></p>
-</section>
-
 <section  class=""><h2 id="the-lesson">The lesson</h2>
 </section>
 
@@ -79,6 +71,18 @@
 <p>A foolish friend may cause more woe</p>
 <p>Than could, indeed, the wisest foe.</p>
 </blockquote>
+<ul>
+<li>woe = :(</li>
+<li>foe = enemy</li>
+</ul>
+</section>
+
+<section  class=""><h2 id="angular-1">Angular 1</h2>
+<p><img src="img/ng1.png" alt="ng1"></p>
+</section>
+
+<section  class=""><h2 id="life-cycle-of-tech">Life-cycle of tech</h2>
+<p><img src="img/progress.png" alt="ng1"></p>
 </section>
 
 <section  class=""><h2 id="so-what-about-angular-2-">So... what about Angular 2?</h2>
@@ -194,6 +198,9 @@ bootstrap(HelloComponent);
 </section>
 
 <section  class=""><h2 id="let-s-try-it-out-">Let&#39;s try it out!</h2>
+<ul>
+<li>Goal: render a bear!</li>
+</ul>
 </section>
 
 <section data-state='title' class=" title"><h2 id="typescript">TypeScript</h2>
@@ -211,6 +218,25 @@ bootstrap(HelloComponent);
 </section>
 
 <section  class=""><h2 id="static-types-done-right">Static types done right</h2>
+</section>
+
+<section  class=""><h2 id="other-engineers-have-to">Other engineers have to</h2>
+</section>
+
+<section data-state='notitle' class=" notitle"><h2 id="-"> </h2>
+<p><img src="img/maths.png" alt="easy"></p>
+</section>
+
+<section  class=""><h2 id="are-types-a-burden-">Are types a burden?</h2>
+<pre><code class="lang-typescript">// why not catch this early?
+boot({
+  elment: document.querySelector(&quot;app&quot;),
+})
+
+function boot({ element } : { element: Element }) {
+  // ...
+}
+</code></pre>
 </section>
 
 <section  class=""><h2 id="main-benefit">Main benefit</h2>
@@ -267,6 +293,29 @@ console.log(greet(1));
 </code></pre>
 </section>
 
+<section  class=""><h2 id="string-union-types">String union types</h2>
+<pre><code class="lang-typescript">type gameEvent = &quot;start&quot; | &quot;end&quot;;
+
+// Type error! &#39;type &quot;other&quot; is not
+//   assignable to type &quot;start&quot; | &quot;e...
+const event: gameEvent = &quot;other&quot;;
+</code></pre>
+</section>
+
+<section  class=""><h2 id="type-unions-">Type unions...</h2>
+<pre><code class="lang-typescript">type startEvent = {
+  at: number,
+};
+
+type endEvent = {
+  at: number,
+  reason: string,
+};
+
+type gameEvent = startEvent | endEvent;
+</code></pre>
+</section>
+
 <section data-state='title' class=" title"><h2 id="modules">Modules</h2>
 </section>
 
@@ -295,7 +344,7 @@ bootstrap(HelloComponent);
 <section  class=""><h2 id="es6-">ES6++</h2>
 </section>
 
-<section  class=""><h2 id="properties-in-constructor">Properties in constructor</h2>
+<section  class=""><h2 id="properties-privacy">Properties + privacy</h2>
 <pre><code class="lang-typescript">export class BearState {
   private meta: {};
 
@@ -320,29 +369,6 @@ state.meta // not ok
 
 const state = new BearState(10, 20);
 state.y // 20;
-</code></pre>
-</section>
-
-<section  class=""><h2 id="string-union-types">String union types</h2>
-<pre><code class="lang-typescript">type gameEvent = &quot;start&quot; | &quot;end&quot;;
-
-// Type error! &#39;type &quot;other&quot; is not
-//   assignable to type &quot;start&quot; | &quot;e...
-const event: gameEvent = &quot;other&quot;;
-</code></pre>
-</section>
-
-<section  class=""><h2 id="type-unions-">Type unions...</h2>
-<pre><code class="lang-typescript">type startEvent = {
-  at: number,
-};
-
-type endEvent = {
-  at: number,
-  reason: string,
-};
-
-type gameEvent = startEvent | endEvent;
 </code></pre>
 </section>
 
@@ -526,6 +552,14 @@ class HelloComponent {
 
 <section  class=""><h2 id="tree">Tree</h2>
 <p><img src="img/injector-tree.png" alt="injector tree"></p>
+</section>
+
+<section  class=""><h2 id="let-s-try">Let&#39;s try</h2>
+<ul>
+<li>Goal:</li>
+<li>Inject a game store</li>
+<li>Update game state from store</li>
+</ul>
 </section>
 
 <section data-state='title' class=" title"><h2 id="change-detection">Change detection</h2>
